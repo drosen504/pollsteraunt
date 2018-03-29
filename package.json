@@ -1,14 +1,14 @@
 {
   "name": "pollsteraunt",
   "version": "1.0.0",
-  "description": "A psimple polling app to help you and your friends decide where to eat",
-  "main": "index.js",
+  "description": "A simple polling app to help you and your friends decide where to eat",
+  "main": "server.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node --inspect server.js",
+    "test": "mocha --exit"
   },
   "repository": {
     "type": "git",
