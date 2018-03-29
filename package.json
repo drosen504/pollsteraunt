@@ -1,0 +1,26 @@
+{
+  "name": "pollsteraunt",
+  "version": "1.0.0",
+  "description": "A psimple polling app to help you and your friends decide where to eat",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drosen504/pollsteraunt.git"
+  },
+  "author": "Dan Rosen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drosen504/pollsteraunt/issues"
+  },
+  "homepage": "https://github.com/drosen504/pollsteraunt#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
