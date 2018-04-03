@@ -15,7 +15,7 @@
 // module.exports = app; 
 
 
-require('dotenv').config();
+// require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
