@@ -18,9 +18,12 @@ mongoose.Promise = global.Promise;
 
 const { PORT, DATABASE_URL } = require('./config');
 
+//Body parsing
+app.use(bodyParser.json());
+
 // Logging
 app.use(morgan('common'));
-app.use(bodyParser.json());
+
 
 // CORS
 app.use(function (req, res, next) {
