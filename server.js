@@ -1,22 +1,11 @@
 'use strict';
 
-// const express = require('express');
+const express = require('express');
+const app = express();
 
-// const app = express();
-
-// app.use(express.static('public'));
-
-// if (require.main === module) {
-//   app.listen(process.env.PORT || 8080, function () {
-//     console.info(`App listening on ${this.address().port}`);
-//   });
-// }
-
-// module.exports = app; 
-
+app.use(express.static('public'));
 
 // require('dotenv').config();
-const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
@@ -28,8 +17,6 @@ const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 mongoose.Promise = global.Promise;
 
 const { PORT, DATABASE_URL } = require('./config');
-
-const app = express();
 
 // Logging
 app.use(morgan('common'));
@@ -102,8 +89,8 @@ function closeServer() {
   });
 }
 
-// if (require.main === module) {
-//   runServer().catch(err => console.error(err));
-// }
+if (require.main === module) {
+  runServer(DATABASE_URL).catch(err => console.error(err));
+}
 
 module.exports = { app, runServer, closeServer };
