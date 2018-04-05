@@ -43,7 +43,7 @@ describe('Auth endpoints', function () {
       return chai
         .request(app)
         .post('/api/auth/login')
-        .then((res) => console.log('response = ', res))
+        .then(() => null)
         .catch(err => {
           
           if (err instanceof chai.AssertionError) {
