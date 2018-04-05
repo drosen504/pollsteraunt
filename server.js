@@ -59,7 +59,7 @@ app.use('*', (req, res) => {
 // assumes runServer has run and set `server` to a server object
 let server;
 
-function runServer() {
+function runServer(DATABASE_URL, PORT) {
   return new Promise((resolve, reject) => {
     mongoose.connect(DATABASE_URL, err => {
       if (err) {

@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 
 const { app, runServer, closeServer } = require('../server');
 const { User } = require('../users');
-const { JWT_SECRET } = require('../config');
+const { JWT_SECRET, TEST_DATABASE_URL } = require('../config');
 
 const expect = chai.expect;
 
@@ -18,7 +18,7 @@ describe('Auth endpoints', function () {
   const password = 'examplePass';
 
   before(function () {
-    return runServer();
+    return runServer(TEST_DATABASE_URL, 8081);
   });
 
   after(function () {
@@ -43,16 +43,16 @@ describe('Auth endpoints', function () {
       return chai
         .request(app)
         .post('/api/auth/login')
-        .then(() =>
-          expect.fail(null, null, 'Request should not succeed')
-        )
+        .then((res) => console.log('response = ', res))
         .catch(err => {
+          
           if (err instanceof chai.AssertionError) {
             throw err;
           }
-
+          
           const res = err.response;
           expect(res).to.have.status(400);
+          expect(res.text).to.equal('Bad Request');
         });
     });
     it('Should reject requests with incorrect usernames', function () {
