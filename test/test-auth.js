@@ -75,9 +75,7 @@ describe('Auth endpoints', function () {
         .request(app)
         .post('/api/auth/login')
         .send({ username, password: 'wrongPassword' })
-        .then(() =>
-          expect.fail(null, null, 'Request should not succeed')
-        )
+        .then(() => null)
         .catch(err => {
           if (err instanceof chai.AssertionError) {
             throw err;
@@ -85,6 +83,7 @@ describe('Auth endpoints', function () {
 
           const res = err.response;
           expect(res).to.have.status(401);
+          expect(res.text).to.equal('Unauthorized');
         });
     });
     it('Should return a valid auth token', function () {
