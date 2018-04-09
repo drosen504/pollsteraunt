@@ -1,7 +1,9 @@
 'use strict';
 /* global $ */
 
+let authToken;
 
+//saves entered values for username/password on signup. trigger POST API call function thereafter
 const handleSignupClick = function(event) {
   event.preventDefault();
   const enteredUsername = $('.js-username').val();
@@ -9,22 +11,45 @@ const handleSignupClick = function(event) {
   console.log(`Username entered is ${enteredUsername} and password is ${enteredPassword}`);
   $('.js-username').val('');
   $('.js-password').val('');
-  
+  createAccountApiCall(enteredUsername, enteredPassword);
+}; 
+
+//POST API call with entered username and password. automatically triggers login POST function to log user in
+const createAccountApiCall = function(username, password) {
   $.ajax({
     type: 'POST',
     url: '/api/users',
     data: JSON.stringify({
-      'username': enteredUsername,
-      'password': enteredPassword
+      'username': username,
+      'password': password
     }),
     contentType: 'application/json',
     success: result => { console.log(result); },
     error: error => { console.log(`Error: ${error.responseJSON.message}`); }  
-  });
-}; 
+  })
+    .done(function(json){
+      console.log(json);
+      loginAccountApiCall(username, password);
+    });
+};
 
-const createAccountApiCall = function() {
-  //POST request to create account;
+const loginAccountApiCall = function(username, password){
+  $.ajax({
+    type: 'POST',
+    url: '/api/auth/login',
+    data: JSON.stringify({
+      'username': username,
+      'password': password
+    }),
+    contentType: 'application/json',
+    success: result => {
+      localStorage.setItem('Bearer', result.authToken);
+      authToken = localStorage.getItem('Bearer');
+      
+      //enter new location upon successful login---- window.location.replace(); 
+    },  
+    error: error => { console.log(`Error: ${error.responseJSON.message}`); }  
+  });
 };
 
 $(() => {
