@@ -18,9 +18,8 @@ const handleSignupClick = function(event) {
       'password': enteredPassword
     }),
     contentType: 'application/json',
-    success: function(result){
-      console.log(result);
-    }
+    success: result => { console.log(result); },
+    error: error => { console.log(`Error: ${error.responseJSON.message}`); }  
   });
 }; 
 
