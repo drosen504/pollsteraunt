@@ -10,19 +10,14 @@ const handleSignupClick = function(event) {
   $('.js-username').val('');
   $('.js-password').val('');
   
-  // let accountFormInfo = {};
-  // accountFormInfo['username'] = `${enteredUsername}`;
-  // accountFormInfo['password'] = `${enteredPassword}`;
-  
-  let formData = new FormData();
-  formData.append('username', enteredUsername);
-  formData.append('password', enteredPassword);
-  console.log(`accountFormInfo is now ${formData}`);
-
   $.ajax({
     type: 'POST',
     url: '/api/users',
-    data: FormData,
+    data: JSON.stringify({
+      'username': enteredUsername,
+      'password': enteredPassword
+    }),
+    contentType: 'application/json',
     success: function(result){
       console.log(result);
     }
