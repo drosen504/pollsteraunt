@@ -111,9 +111,7 @@ describe('Auth endpoints', function () {
       return chai
         .request(app)
         .post('/api/auth/refresh')
-        .then(() =>
-          expect.fail(null, null, 'Request should not succeed')
-        )
+        .then(() => null)
         .catch(err => {
           if (err instanceof chai.AssertionError) {
             throw err;
@@ -121,6 +119,7 @@ describe('Auth endpoints', function () {
 
           const res = err.response;
           expect(res).to.have.status(401);
+          expect(res.text).to.equal('Unauthorized');
         });
     });
     it('Should reject requests with an invalid token', function () {
@@ -139,9 +138,7 @@ describe('Auth endpoints', function () {
         .request(app)
         .post('/api/auth/refresh')
         .set('Authorization', `Bearer ${token}`)
-        .then(() =>
-          expect.fail(null, null, 'Request should not succeed')
-        )
+        .then(() => null)
         .catch(err => {
           if (err instanceof chai.AssertionError) {
             throw err;
@@ -149,6 +146,7 @@ describe('Auth endpoints', function () {
 
           const res = err.response;
           expect(res).to.have.status(401);
+          expect(res.text).to.equal('Unauthorized');
         });
     });
     it('Should reject requests with an expired token', function () {
@@ -170,9 +168,7 @@ describe('Auth endpoints', function () {
         .request(app)
         .post('/api/auth/refresh')
         .set('authorization', `Bearer ${token}`)
-        .then(() =>
-          expect.fail(null, null, 'Request should not succeed')
-        )
+        .then(() => null)
         .catch(err => {
           if (err instanceof chai.AssertionError) {
             throw err;
@@ -180,6 +176,7 @@ describe('Auth endpoints', function () {
 
           const res = err.response;
           expect(res).to.have.status(401);
+          expect(res.text).to.equal('Unauthorized');
         });
     });
     it('Should return a valid auth token with a newer expiry date', function () {
