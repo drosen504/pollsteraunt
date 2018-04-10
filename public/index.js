@@ -45,12 +45,31 @@ const loginAccountApiCall = function(username, password){
     success: result => {
       localStorage.setItem('Bearer', result.authToken);
       authToken = localStorage.getItem('Bearer');
-      
       //enter new location upon successful login---- window.location.replace(); 
     },  
     error: error => { console.log(`Error: ${error.responseJSON.message}`); }  
   });
 };
+
+// const refreshAuthApiCall = function(authToken) {
+//   $.ajax({
+//     type: 'POST',
+//     url: '/api/auth/login',
+//     data: JSON.stringify({
+//       'username': username,
+//       'password': password
+//     }),
+//     contentType: 'application/json',
+//     success: result => {
+//       localStorage.setItem('Bearer', result.authToken);
+//       authToken = localStorage.getItem('Bearer');
+//       //enter new location upon successful login---- window.location.replace(); 
+//     },  
+//     error: error => { console.log(`Error: ${error.responseJSON.message}`); }  
+//   });
+// };
+
+
 
 $(() => {
   $('.signup-form').on('submit', handleSignupClick);
