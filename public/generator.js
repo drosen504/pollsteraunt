@@ -5,15 +5,24 @@
 const generator = function() {
   return { 
     renderAdminPollQuestion: function(result) {
-      $('.js-poll-creation').html(`
+      return `
       <form>
         <fieldset>
-          <input type="radio" name="option1" value=0>${RESTAURANTS.businesses[0].name} <br>
-          <input type="radio" name="option2" value=1>${RESTAURANTS.businesses[1].name} <br>
-          <input type="radio" name="option3" value=2>${RESTAURANTS.businesses[2].name} <br>
-          <button name="accept-poll">Accept Poll</button><button name="refresh-poll">Refresh Poll</button>
-      </form>`);
+          <input type="radio" name="option1" value=0>${result.name} <br>
+        </fieldset>            
+      </form>`;
     },
 
+    renderAcceptRefreshPollButtons: function() {
+      $('.js-poll-creation').append('<button name="accept-poll">Accept Poll</button><button name="refresh-poll">Refresh Poll</button>');
+    },
+
+    displayPollSearchData: function(data) {
+      console.log(data);
+      const results = data.businesses.map((business) => generator.renderAdminPollQuestion(business));
+      $('.js-poll-creation').html(results);
+      generator.renderAcceptRefreshPollButtons();
+    }
   };
 }();
+

@@ -6,7 +6,8 @@ const handler = function() {
   return {
     handleCreatePollClick: function() {
       
-      generator.renderAdminPollQuestion();
+      generator.displayPollSearchData(RESTAURANTS);
+   
     }
 
   };
