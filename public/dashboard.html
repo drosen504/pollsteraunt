@@ -6,19 +6,16 @@
         <title>Pollsteraunt Admin Dashboard</title>
         <link href="dashboard.css" rel="stylesheet" type="text/css" />
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
-  <script src="dashboard.js"></script>
+				<script src="staticdata.js"></script>
+				<script src="handlers.js"></script>
+				<script src="index.js"></script>
     </head>
     <body>
-        <form class="polling-form">
-            <fieldset>
-                <input type="radio" name="option1" value=0> <br>
-                <input type="radio" name="option2" value=1> <br>
-                <input type="radio" name="option3" value=2> <br>
-                <button name="submit">submit</button>
-        </form>
-
+				<section class="js-poll-creation"></section>
+					<button id="js-create-a-poll">Create a Poll!</button>
+        <section class="js-existing-poll"></section>
     </body>
 </html>
