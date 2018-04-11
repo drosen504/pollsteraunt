@@ -1,5 +1,5 @@
 'use strict';
-/* global $ */
+/* global $ handler */
 
 let authToken;
 
@@ -45,7 +45,7 @@ const loginAccountApiCall = function(username, password){
     success: result => {
       localStorage.setItem('Bearer', result.authToken);
       authToken = localStorage.getItem('Bearer');
-      //enter new location upon successful login---- window.location.replace(); 
+      window.location = 'dashboard.html'; 
     },  
     error: error => { console.log(`Error: ${error.responseJSON.message}`); }  
   });

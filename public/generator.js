@@ -1,6 +1,6 @@
 'use strict';
-/* global $ */
-/* global RESTAURANTS */
+/* global $ RESTAURANTS*/
+
 
 const generator = function() {
   return { 
