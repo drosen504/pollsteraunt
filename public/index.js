@@ -74,4 +74,5 @@ const loginAccountApiCall = function(username, password){
 $(() => {
   $('.signup-form').on('submit', handleSignupClick);
   $('#js-create-a-poll').on('click', handler.handleCreatePollClick);
+  
 });

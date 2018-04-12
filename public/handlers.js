@@ -4,9 +4,12 @@
 
 const handler = function() {
   return {
+    //grabs the location and search query, stores them, and passes them along to API call function
     handleCreatePollClick: function() {
-      
-      generator.displayPollSearchData(RESTAURANTS);
+      event.preventDefault();
+      const enteredLocation = $('#js-zip-input').val();
+      const enteredBusiness = $('#js-business-type').val();
+      console.log(`Zip is ${enteredLocation} and Business is ${enteredBusiness}`);
    
     }
 
