@@ -7,9 +7,9 @@ const handler = function() {
     handleCreatePollClick: function() {
       event.preventDefault();
       const enteredLocation = $('#js-zip-input').val();
-      const enteredBusiness = $('#js-business-type').val();
-      console.log(`Zip is ${enteredLocation} and Business is ${enteredBusiness}`);
-      api.yelpBusinessSearch(enteredLocation, enteredBusiness);
+      const enteredRestaurantType = $('#js-business-type').val();
+      console.log(`Zip is ${enteredLocation} and Business is ${enteredRestaurantType}`);
+      api.yelpBusinessSearch(enteredLocation, enteredRestaurantType);
    
     }
 

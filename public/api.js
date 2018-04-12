@@ -16,11 +16,14 @@ const api = function() {
       const url = new URL(`https://api.yelp.com/v3/businesses/${endpoint}`);
       const headers = new Headers();
       headers.set('Authorization', `Bearer ${apiKey}`);
-      headers.set('Content-Type', 'application/json');
+      // headers.set('Content-Type', 'application/json');
       const requestObject = {
         headers
       };
+       
       Object.keys(query).forEach(key => url.searchParams.append(key, query[key]));
+      console.log(url);
+      console.log(requestObject);
       return fetch(url, requestObject).then(function (response) {
         if (!response.ok) {
           return Promise.reject(response.statusText);
@@ -31,9 +34,17 @@ const api = function() {
     yelpBusinessSearch: function(location, business){
       console.log('Yelp search initiated');
       return api.getBusinessDataFromYelpApi('search', {
-        
-      });
+        terms: 'restaurants',
+        location: location,
+        categories: business,
+        radius: '8050',
+        limit: 3,
+      })
+        .then(data => { 
+          restaurantData = data.businesses;
+          console.log(restaurantData);
+        })
+        .catch(error => console.log(error));
     },
-
   };
 }();
