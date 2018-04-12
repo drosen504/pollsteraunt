@@ -1,6 +1,5 @@
 'use strict';
-/* global $ */
-/* global generator */
+/* global generator api $ */
 
 const handler = function() {
   return {
@@ -10,6 +9,7 @@ const handler = function() {
       const enteredLocation = $('#js-zip-input').val();
       const enteredBusiness = $('#js-business-type').val();
       console.log(`Zip is ${enteredLocation} and Business is ${enteredBusiness}`);
+      api.yelpBusinessSearch(enteredLocation, enteredBusiness);
    
     }
 
