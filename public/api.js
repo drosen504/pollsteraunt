@@ -11,26 +11,10 @@ const api = function() {
       return Math.floor(Math.random() * Math.floor(max));
     },
 
-    // yelpBusinessSearch: function (location, type, callback) {
-    //   const query = {
-    //     terms: 'restaurants',
-    //     location: location,
-    //     categories: type,
-    //     radius: '8050',
-    //     limit: 3,
-    //     Authorization: `Bearer ${apiKey}`
-    //   };
-    //   $.getJSON(yelpBaseUrl, query, callback);
-    // }
-
     getBusinessDataFromYelpApi: function (endpoint, query = {}) {
       console.log('Yelp API function triggered');
       const url = new URL(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${endpoint}`);
       const headers = new Headers();
-      headers.set('Access-Control-Allow-Origin', '*');
-      headers.set('Access-Control-Allow-Headers', 'Content-Type');
-      headers.set('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE,OPTIONS');
-      headers.set('Content-Type', 'application/json');
       headers.set('Authorization', `Bearer ${apiKey}`);
       const requestObject = {
         headers
