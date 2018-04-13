@@ -25,7 +25,7 @@ const api = function() {
 
     getBusinessDataFromYelpApi: function (endpoint, query = {}) {
       console.log('Yelp API function triggered');
-      const url = new URL(`https://api.yelp.com/v3/businesses/${endpoint}`);
+      const url = new URL(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${endpoint}`);
       const headers = new Headers();
       headers.set('Access-Control-Allow-Origin', '*');
       headers.set('Access-Control-Allow-Headers', 'Content-Type');
@@ -56,7 +56,8 @@ const api = function() {
         limit: 3,
       })
         .then(data => { 
-          restaurantData = data.businesses;
+          console.log('Data = ', data.businesses) ;
+          const restaurantData = data.businesses;
           console.log(restaurantData);
         })
         .catch(error => console.log(error));
