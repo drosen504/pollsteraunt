@@ -1,5 +1,5 @@
 'use strict';
-/* global $ handler */
+/* global $ handler*/
 
 let authToken;
 

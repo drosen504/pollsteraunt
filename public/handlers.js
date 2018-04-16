@@ -10,8 +10,9 @@ const handler = function() {
       const enteredRestaurantType = $('#js-business-type').val();
       console.log(`Zip is ${enteredLocation} and Business is ${enteredRestaurantType}`);
       api.yelpBusinessSearch(enteredLocation, enteredRestaurantType);
-   
-    }
+    },
+
+    
 
   };
 }();
