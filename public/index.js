@@ -1,5 +1,5 @@
 'use strict';
-/* global $ handler*/
+/* global $ handler generator*/
 
 let authToken;
 
@@ -72,7 +72,10 @@ const loginAccountApiCall = function(username, password){
 
 
 $(() => {
+  generator.hideAll();
+  $('.js-signup-form').show();
   $('.signup-form').on('submit', handleSignupClick);
   $('#js-create-a-poll').on('click', handler.handleCreatePollClick);
+  $('#js-signup-form: p').on('click', generator.swapToLoginView);
   
 });

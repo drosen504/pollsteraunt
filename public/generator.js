@@ -4,6 +4,10 @@
 
 const generator = function() {
   return { 
+    hideAll: function() {
+      $('.js-login-form').hide();
+      $('.js-signup-form').hide();
+    },
     renderAdminPollQuestion: function(result) {
       console.log('result getting passed into render function is', result);
       $('.js-poll-creation').html(`
@@ -20,7 +24,13 @@ const generator = function() {
     renderAcceptRefreshPollButtons: function() {
       $('.js-poll-creation').append('<button name="accept-poll">Accept Poll</button><button name="refresh-poll">Refresh Poll</button>');
     },
-  
+    
+    swapToLoginView: function() {
+      console.log('swapToLoginView function triggered');
+      generator.hideAll();
+      $('.js-signup-form').show();
+
+    },
     
     // displayPollSearchData: function(data) {
     //   const results = data.map((business) => generator.renderAdminPollQuestion(business));
