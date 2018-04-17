@@ -37,14 +37,14 @@ const generator = function() {
         </fieldset>
       `);
 
-    }
+    },
     
-    // swapToLoginView: function() {
-    //   console.log('swapToLoginView function triggered');
-    //   // generator.hideAll();
-    //   $('.js-signup-form').show();
+    swapToLoginView: function() {
+      console.log('swapToLoginView function triggered');
+      generator.hideAll();
+      $('.js-signup-form').show();
 
-    // },
+    },
     
 
   };

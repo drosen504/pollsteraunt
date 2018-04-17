@@ -75,7 +75,7 @@ const loginAccountApiCall = function(username, password){
 $(() => {
   generator.hideAll();
   $('.js-signup-form').show();
-  // $('#js-link-to-login').click(generator.swapToLoginView);
+  $('#js-link-to-login').on('click', generator.swapToLoginView);
   $('.signup-form').on('submit', handleSignupClick);
   $('#js-create-a-poll').on('click', handler.handleCreatePollClick);
   $('.js-polling-form').on('click', handler.getPollIdFromUrl);
