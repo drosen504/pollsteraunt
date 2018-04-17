@@ -9,6 +9,7 @@ const generator = function() {
       $('.js-login-form').hide();
       $('.js-signup-form').hide();
     },
+
     renderAdminPollQuestion: function(result) {
       console.log('result getting passed into render function is', result);
       $('.js-poll-creation').html(`
@@ -25,6 +26,12 @@ const generator = function() {
     renderAcceptRefreshPollButtons: function() {
       $('.js-poll-creation').append('<button name="accept-poll">Accept Poll</button><button name="refresh-poll">Refresh Poll</button>');
     },
+
+    renderUserPoll: function(pollData) {
+      console.log('rendering poll for user');
+      $('.js-polling-form').html;
+
+    }
     
     // swapToLoginView: function() {
     //   console.log('swapToLoginView function triggered');
@@ -33,12 +40,17 @@ const generator = function() {
 
     // },
     
-    // displayPollSearchData: function(data) {
-    //   const results = data.map((business) => generator.renderAdminPollQuestion(business));
-    //   console.log('results for html generation are', results);
-    //   $('.js-poll-creation').html(results);
-    //   generator.renderAcceptRefreshPollButtons();
-    // }
+
   };
 }();
+
+
+
+
+// displayPollSearchData: function(data) {
+//   const results = data.map((business) => generator.renderAdminPollQuestion(business));
+//   console.log('results for html generation are', results);
+//   $('.js-poll-creation').html(results);
+//   generator.renderAcceptRefreshPollButtons();
+// }
 

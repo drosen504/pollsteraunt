@@ -8,8 +8,12 @@ const handler = function() {
       event.preventDefault();
       const enteredLocation = $('#js-zip-input').val();
       const enteredRestaurantType = $('#js-business-type').val();
-      console.log(`Zip is ${enteredLocation} and Business is ${enteredRestaurantType}`);
       api.yelpBusinessSearch(enteredLocation, enteredRestaurantType);
     },
+
+    getPollIdFromUrl: function() {
+      //need to write this function to grab poll ID from Url, which is how users navigate to poll in the first place. This pollId will be passed to api.pollsterauntPollSearch in order to make API call to Pollsteraunt database
+    },
+
   };
 }();
