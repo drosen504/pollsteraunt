@@ -33,6 +33,7 @@ const createAccountApiCall = function(username, password) {
     });
 };
 
+//POST API call that checks username that routes valid users to dashboard page
 const loginAccountApiCall = function(username, password){
   $.ajax({
     type: 'POST',
@@ -74,8 +75,9 @@ const loginAccountApiCall = function(username, password){
 $(() => {
   generator.hideAll();
   $('.js-signup-form').show();
+  // $('#js-link-to-login').click(generator.swapToLoginView);
   $('.signup-form').on('submit', handleSignupClick);
   $('#js-create-a-poll').on('click', handler.handleCreatePollClick);
-  $('#js-signup-form: p').on('click', generator.swapToLoginView);
+  
   
 });

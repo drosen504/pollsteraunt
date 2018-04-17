@@ -142,3 +142,72 @@ const RESTAURANTS = {
     }
   }
 };
+
+const POLLS = {
+  'restaurantPolls': [
+    {
+      'id': '1111111',
+      'restaurantType': 'BBQ',
+      'restaurantOptions': [
+        { 'name': 'Bubbah BBQ',
+          'voteScore': 1,
+        },
+        { 'name': 'Mesquite Pete',
+          'voteScore': 0,
+        },
+        { 'name': 'Mesquite Pete',
+          'voteScore': 3,
+        }
+      ],
+    },
+
+    {
+      'id': '2222222',
+      'restaurantType': 'Chinese',
+      'restaurantOptions': [
+        { 'name': 'China Wall',
+          'voteScore': 2,
+        },
+        { 'name': 'Hunan House',
+          'voteScore': 1,
+        },
+        { 'name': 'Dim Sum Garden',
+          'voteScore': 0,
+        }
+      ],
+    },
+
+    {
+      'id': '3333333',
+      'restaurantType': 'Japanese',
+      'restaurantOptions': [
+        { 'name': 'Sushi Brothers',
+          'voteScore': 3,
+        },
+        { 'name': 'Teriyaki Hut',
+          'voteScore': 1,
+        },
+        { 'name': 'Hokkaido Grill',
+          'voteScore': 2,
+        }
+      ],
+    },
+
+    {
+      'id': '4444444',
+      'restaurantType': 'Chicken',
+      'restaurantOptions': [
+        { 'name': 'Chik-Fil-A',
+          'voteScore': 1,
+        },
+        { 'name': 'Churchs Chicken',
+          'voteScore': 1,
+        },
+        { 'name': 'Popeyes',
+          'voteScore': 0,
+        }
+      ],
+    },
+
+  ]
+};

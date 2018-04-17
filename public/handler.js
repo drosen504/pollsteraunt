@@ -11,8 +11,5 @@ const handler = function() {
       console.log(`Zip is ${enteredLocation} and Business is ${enteredRestaurantType}`);
       api.yelpBusinessSearch(enteredLocation, enteredRestaurantType);
     },
-
-    
-
   };
 }();

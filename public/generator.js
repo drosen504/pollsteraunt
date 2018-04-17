@@ -5,6 +5,7 @@
 const generator = function() {
   return { 
     hideAll: function() {
+      console.log('hiding everything');
       $('.js-login-form').hide();
       $('.js-signup-form').hide();
     },
@@ -25,12 +26,12 @@ const generator = function() {
       $('.js-poll-creation').append('<button name="accept-poll">Accept Poll</button><button name="refresh-poll">Refresh Poll</button>');
     },
     
-    swapToLoginView: function() {
-      console.log('swapToLoginView function triggered');
-      generator.hideAll();
-      $('.js-signup-form').show();
+    // swapToLoginView: function() {
+    //   console.log('swapToLoginView function triggered');
+    //   // generator.hideAll();
+    //   $('.js-signup-form').show();
 
-    },
+    // },
     
     // displayPollSearchData: function(data) {
     //   const results = data.map((business) => generator.renderAdminPollQuestion(business));
