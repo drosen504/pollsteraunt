@@ -14,9 +14,9 @@ const generator = function() {
       $('.js-poll-creation').html(`
       <form>
         <fieldset>
-          <input type="radio" name='business' value=0 required> ${result[0].name} </input> <br>
-          <input type="radio" name='business' value=1> ${result[1].name} </input> <br>
-          <input type="radio" name='business' value=2> ${result[2].name} </input> <br>
+          <input type="radio" name='business' value=0 required> <a role="link" href="${result[0].url}" target= '_blank'> ${result[0].name} </a></input> <br>
+          <input type="radio" name='business' value=1> <a role="link" href="${result[1].url}" target= '_blank'> ${result[1].name} </a> </input> <br>
+          <input type="radio" name='business' value=2> <a role="link" href="${result[2].url}" target= '_blank'> ${result[2].name} </a> <br>
         </fieldset>
       </form>`);
       generator.renderAcceptRefreshPollButtons();

@@ -150,12 +150,15 @@ const POLLS = {
       'restaurantType': 'BBQ',
       'restaurantOptions': [
         { 'name': 'Bubbah BBQ',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 1,
         },
         { 'name': 'Mesquite Pete',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 0,
         },
         { 'name': 'Mesquite Pete',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 3,
         }
       ],
@@ -166,12 +169,15 @@ const POLLS = {
       'restaurantType': 'Chinese',
       'restaurantOptions': [
         { 'name': 'China Wall',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 2,
         },
         { 'name': 'Hunan House',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 1,
         },
         { 'name': 'Dim Sum Garden',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 0,
         }
       ],
@@ -182,12 +188,15 @@ const POLLS = {
       'restaurantType': 'Japanese',
       'restaurantOptions': [
         { 'name': 'Sushi Brothers',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 3,
         },
         { 'name': 'Teriyaki Hut',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 1,
         },
         { 'name': 'Hokkaido Grill',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 2,
         }
       ],
@@ -198,12 +207,15 @@ const POLLS = {
       'restaurantType': 'Chicken',
       'restaurantOptions': [
         { 'name': 'Chik-Fil-A',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 1,
         },
         { 'name': 'Churchs Chicken',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 1,
         },
         { 'name': 'Popeyes',
+          'yelpUrl': 'yelpurl.com',
           'voteScore': 0,
         }
       ],
