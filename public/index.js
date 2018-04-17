@@ -78,6 +78,7 @@ $(() => {
   // $('#js-link-to-login').click(generator.swapToLoginView);
   $('.signup-form').on('submit', handleSignupClick);
   $('#js-create-a-poll').on('click', handler.handleCreatePollClick);
+  $('.js-polling-form').on('click', handler.getPollIdFromUrl);
   
   
 });

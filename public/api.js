@@ -49,9 +49,10 @@ const api = function() {
     },
 
     //This is to be replaced with an API call to pollsteraunt database. current function is for mockup functionality. pollId argument gets passed via the handler.getPollIdFromUrl() function.
-    pollsterauntPollSearch: function(pollId) {
+    pollsterauntPollSearch: function() {
       console.log('mock API call triggered');
       const pollData = POLLS.restaurantPolls; //temporarily just grabbing static data
+      console.log('mock poll data is', pollData);
       generator.renderUserPoll(pollData);
     }
   };

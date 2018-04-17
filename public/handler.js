@@ -11,8 +11,10 @@ const handler = function() {
       api.yelpBusinessSearch(enteredLocation, enteredRestaurantType);
     },
 
+    //need to write this function to grab poll ID from Url, which is how users navigate to poll in the first place. This pollId will be passed to api.pollsterauntPollSearch in order to make API call to Pollsteraunt database. This function will be triggered automatically after the DOM loads.
     getPollIdFromUrl: function() {
-      //need to write this function to grab poll ID from Url, which is how users navigate to poll in the first place. This pollId will be passed to api.pollsterauntPollSearch in order to make API call to Pollsteraunt database
+      event.preventDefault();
+      api.pollsterauntPollSearch(0);
     },
 
   };
