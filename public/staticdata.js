@@ -143,6 +143,9 @@ const RESTAURANTS = {
   }
 };
 
+//restaurantType to cuisineType
+
+
 const POLLS = {
   'restaurantPolls': [
     {
