@@ -17,6 +17,7 @@ const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 mongoose.Promise = global.Promise;
 
 const { PORT, DATABASE_URL } = require('./config');
+const { Poll } = require('./poll-model');
 
 //Body parsing
 app.use(bodyParser.json());

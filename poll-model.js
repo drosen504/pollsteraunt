@@ -30,3 +30,7 @@ pollSchema.methods.serialize= function() {
     options: this.options         
   };
 };
+
+const Poll = mongoose.model('Poll', pollSchema);
+
+module.exports = {Poll};
