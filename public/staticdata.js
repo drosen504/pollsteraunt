@@ -144,6 +144,7 @@ const RESTAURANTS = {
 };
 
 //restaurantType to cuisineType
+//restaurantOptions to pollOptions
 
 
 const POLLS = {

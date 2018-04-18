@@ -26,7 +26,7 @@ const pollSchema = mongoose.Schema({
 pollSchema.methods.serialize= function() {
   return {
     id: this._id,
-		type: this.type,
-		options:          
+    type: this.type,
+    options: this.options         
   };
 };
