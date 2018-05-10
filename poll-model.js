@@ -1,27 +1,30 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const { Restaurant } = require('./restaurant-model');
 
 const pollSchema = mongoose.Schema({
   type: {type: String, required: true},
   options: [{
-    option1: {
-      name: String,
-      url: String,
-      score: Number, 
-    },
-    option2: {
-      name: String,
-      url: String,
-      score: Number, 
-    },
-    option3: {
-      name: String,
-      url: String,
-      score: Number, 
-    },
+    option1: { Restaurant },
+    //   name: String,
+    //   url: String,
+    //   score: Number, 
+    // },
+    option2: { Restaurant },
+    //   name: String,
+    //   url: String,
+    //   score: Number, 
+    // },
+    option3: { Restaurant },
+    //   name: String,
+    //   url: String,
+    //   score: Number, 
+    // },
   }]
 });
+
+
 
 pollSchema.methods.serialize= function() {
   return {
