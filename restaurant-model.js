@@ -3,11 +3,10 @@
 const mongoose = require('mongoose');
 
 const restaurantSchema = mongoose.Schema({
-  type: {type: String, required: true},
-  option: {
+  cuisine: {type: String, required: true},
+  restaurant: {
     name: String,
-    url: String,
-    score: Number, 
+    url: String
   }
 });
 
@@ -23,4 +22,4 @@ restaurantSchema.methods.serialize= function() {
 
 const Restaurant = mongoose.model('Restaurant', restaurantSchema);
 
-module.exports = {Restaurant};
+module.exports = {Restaurant, restaurantSchema};
