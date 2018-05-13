@@ -6,11 +6,10 @@ const restaurantSchema = mongoose.Schema({
   cuisine: {type: String, required: true},
   restaurant: {
     name: String,
-    url: String
+    url: String,
+    score: Number
   }
 });
-
-
 
 restaurantSchema.methods.serialize= function() {
   return {
