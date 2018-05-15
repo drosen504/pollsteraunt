@@ -40,34 +40,6 @@ router.get('/pollcreate', (req, res) => {
 //     // req.body
 // });
 
-const api_key = 'wnY4Trg2G2BzWvRBHlMLl-_1KEt2Z7Hd-2D4untSR_KJ6fJYwhAlT_Y-InkvpNrfq21EKtBsJD_G2aC0DUnwQEBRO43pX4zbR39mTNe8-NFwZp_GOEF6tuDS0fLLWnYx';
-const yelpBaseUrl = 'api.yelp.com/v3/businesses';
-const path = '';
-const zipcode = 70130;
-const restaurantCuisine = 'thai';
-
-const yelpSearchOptions = {
-  hostname: yelpBaseUrl,
-  path: ` /search?terms=restaurants&location=${zipcode}&radius7050&limit=3&categories=${restaurantCuisine}`,
-  headers: {
-    Authorization: `Bearer ${api_key}`
-  }
-};
-
-function makeYelpRequest(restaurantCuisine, zipcode) {
-  https.get(yelpSearchOptions, (res) => {
-    let string = '';
-    res.on('data', (data) => {string += data;});
-    res.on('end', () => {
-      let json = JSON.parse(string);
-      handleJson(json);
-    });
-    res.on('error', (err) => {console.error(err);
-    });
-  })
-    .on('error', (err) => {console.error(err);
-    });
-}
 
 function createRestaurant(yelpObject, done) {
 
