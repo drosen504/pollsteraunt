@@ -5,7 +5,10 @@ const { Restaurant, restaurantSchema } = require('./restaurant-model');
 
 const pollSchema = mongoose.Schema({  
   cuisine: {type: String, required: true},
-  options: [restaurantSchema]
+  options: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Restaurant'
+  }]
 });
 
 

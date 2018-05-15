@@ -7,7 +7,15 @@ const restaurantSchema = mongoose.Schema({
   restaurant: {
     name: String,
     url: String,
-    score: Number
+    score: {
+      required: true,
+      default: 0
+    }
+  },
+  yelp_id: {
+    type: String,
+    required: true,
+    unique: true
   }
 });
 
