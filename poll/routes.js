@@ -9,36 +9,36 @@ const Poll = require('../poll-model');
 router.get('/pollcreate', (req, res) => {
   const query = req.query || {};
 
-})
+});
 
-// router.get('/createpoll', function(req, res, next) {
-//   if (!req.user) return res.json({err: 'not logged in'});
-//   return next();
-// }, function(req, res, next) {
-//   const poll = new Poll({
+router.get('/createpoll', function(req, res, next) {
+  if (!req.user) return res.json({err: 'not logged in'});
+  return next();
+}, function(req, res, next) {
+  const poll = new Poll({
 
-//   });
-//   return res.json(poll);
-// });
+  });
+  return res.json(poll);
+});
 
-// router.get('/:id', function(req, res, next) {
-//     Poll.findById(id, function(err, poll) {
-//         if (err) //lskdfajks
+router.get('/:id', function(req, res, next) {
+    Poll.findById(id, function(err, poll) {
+        if (err) //lskdfajks
 
-//         // /api/polls/32104918209381209
+        // /api/polls/32104918209381209
 
-//     })
-//     // req.params.id
-// });
+    })
+    req.params.id
+});
 
-// router.post('/:id', function(req, res, next) {
-//     Poll.findOneAndUpdate({_id: id}, {update_parameters}, function(err, poll) {
-//         if (err) //asd
+router.post('/:id', function(req, res, next) {
+    Poll.findOneAndUpdate({_id: id}, {update_parameters}, function(err, poll) {
+        if (err) //asd
 
-//     });
-//     // req.params.id
-//     // req.body
-// });
+    });
+    req.params.id
+    req.body
+});
 
 
 function createRestaurant(yelpObject, done) {
