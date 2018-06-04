@@ -13,7 +13,7 @@ const bodyParser = require('body-parser');
 const https = require('https');
 
 const { router: usersRouter } = require('./users');
-const { router: pollRouter } = require('./polls');
+// const { router: pollRouter } = require('./polls');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 mongoose.Promise = global.Promise;
@@ -44,7 +44,7 @@ passport.use(jwtStrategy);
 
 app.use('/api/users/', usersRouter);
 app.use('/api/auth/', authRouter);
-app.use('/api/poll', pollRouter);
+// app.use('/api/poll', pollRouter);
 
 const jwtAuth = passport.authenticate('jwt', { session: false });
 
@@ -56,14 +56,14 @@ const restaurantCuisine = 'thai';
 
 const yelpSearchOptions = {
   hostname: yelpBaseUrl,
-  path: ` /search?terms=restaurants&location=${zipcode}&radius7050&limit=3&categories=${restaurantCuisine}`,
+  path: `/search?terms=restaurants&location=${zipcode}&radius7050&limit=3&categories=${restaurantCuisine}`,
   headers: {
     Authorization: `Bearer ${api_key}`
   }
 };
 
 //yelp request
-app.get('/request', jwtAuth, (req) => {
+app.get('/request', jwtAuth, (req, res) => {
   let restaurantCuisine = restaurantCuisine;
   let zipcode = zipcode;
   makeYelpRequest(restaurantCuisine, zipcode); 
@@ -75,14 +75,16 @@ function makeYelpRequest(restaurantCuisine, zipcode) {
     res.on('data', (data) => {string += data;});
     res.on('end', () => {
       let json = JSON.parse(string);
-      handleJson(json);
+      console.log(json);
     });
     const reportError = function(err) { console.error(err) ;}; 
     res.on('error', reportError);
   });
 }
 
-
+function handleJson(json) {
+  console.log(json);
+}
 
 // A protected endpoint which needs a valid JWT to access it
 app.get('/api/protected', jwtAuth, (req, res) => {

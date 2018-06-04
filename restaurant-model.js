@@ -4,14 +4,9 @@ const mongoose = require('mongoose');
 
 const restaurantSchema = mongoose.Schema({
   cuisine: {type: String, required: true},
-  restaurant: {
-    name: String,
-    url: String,
-    score: {
-      required: true,
-      default: 0
-    }
-  },
+  name: {type: String, required: true},
+  url: {type: String, required: true},
+  score: {required: false, default: 0},
   yelp_id: {
     type: String,
     required: true,
